@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2019 Statistics Tutor R Demo</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Kevin Y. X. Wang" />
+    <link href="tutor_demo_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+    </script>
+    <style>
+    .mjx-mrow a {
+      color: black;
+      pointer-events: none;
+      cursor: default;
+    }
+    </style>
+    <link rel="stylesheet" href="assets/sydney-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="assets/sydney.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# 2019 Statistics Tutor R Demo
+### <a href="http://www.maths.usyd.edu.au/ut/people?who=KY_Wang&amp;sms=y">Kevin Y. X. Wang</a>
+### Initiated on 2019 Feb 17, compiled on 2019 Feb 17
+
+---
+
+class: segue
+
+### Disclaimer: these materials were written based on my teaching experiences. Your experiences may differ. If any symptons persist, consult your lecturer(s) or other senior tutor(s). 
+
+---
+
+class: segue
+
+### These courses will be different to your 1st Year Statistics Class
+
+---
+
+## The courses seem 'softer'?
+
+For example: what is the definition of sample correlation coefficient between two observed variables `\(x\)` and `\(y\)`?
+
+--
+
++ When I did 1st year statistics: 
+
+`$$r_{xy} =  \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}} = {\frac {n\sum x_{i}y_{i}-\sum x_{i}\sum y_{i}}{{\sqrt {n\sum x_{i}^{2}-(\sum x_{i})^{2}}}~{\sqrt {n\sum y_{i}^{2}-(\sum y_{i})^{2}}}}}$$`
+
+
+--
+
++ Linear algebra: it is the inner product between the centered vectors `\(x\)` and `\(y\)`, divided by the products of their `\(L_2\)` norms.
+
+--
+
++ Geometry: it is the cosine of the angle between the centered `\(x\)` and `\(y\)` in the `\(\mathbb{R}^n\)` space.
+
+&gt; Correlation is a **measure of similarity** between `\(x\)` and `\(y\)` to inform us something about the data, but students get tangled up in the calculations.
+
+---
+
+## More intuitions and more inter-linked contents
+
++ How *tightly clustered* are `\(x\)` and `\(y\)` around the trend line? How to measure similarity `\(x\)` and `\(y\)` *using a number*? 
+
+&lt;center&gt;
+&lt;img src="figures/two_scatter_plots.png", width="40%"&gt;
+&lt;/center&gt;
+
+&lt;!-- + We look at the *centre and spread* of each paired observation in `\(x\)` and `\(y\)` using z-scores. Then, we get a *joint summary* of the two z-scores using multiplication and averaging.  --&gt;
+
++ Mean* of the product of the z-scores of `\(x\)` and `\(y\)`, 
+
+`$$r_{xy}={\frac {1}{n-1}}\sum _{i=1}^{n}\left({\frac {x_{i}-{\bar {x}}}{s_{x}}}\right)\left({\frac {y_{i}-{\bar {y}}}{s_{y}}}\right)$$` 
+
++ Every single word in this definition were introduced previously in the course, and some concepts were recycled for emphasis. 
+
+---
+
+## Format of tutorials 
+
++ Old tutorials: Kevin walks into the room, explains the key calculation for the first 5-10 minutes. Students do some questions on pen and paper to make sure they will know how to do this in the assignment and the final exam. 
+
++ New tutorials: Students actually get a quiz for the first 10 minutes. The motivations in the lab is the data and the thinking questions in textbook. Students then complete the rest of the worksheet using R Markdown. 
+
+&lt;center&gt;
+&lt;img src="figures/rmsError.png", width="30%"&gt;
+&lt;/center&gt;
+
+&gt; In some ways, we are asking more out of our students. Hence some strategic preparations are needed before every tutorial.
+
+Because whenever an unexpected question arises, you can't get out of it by shouting maths formulas.
+
+---
+class: segue
+
+
+
+### What was the hardest thing about using `R` in your undergraduate studies?
+
+---
+
+## Some suggestions
+
++ Where are my **files and folders**?
++ How do I read in this *Excel sheet*?
++ How can I *clean* my data?
++ How do I do this *graph*? How do I calculate this *number*?
++ What is the *purpose* of this analysis again?
+
+&gt; That inability to recognise where the Excel files are located in which folder will be the biggest obstacle for our student in the first 2 weeks &lt;sup&gt;1&lt;/sup&gt;. 
+
++ We are using a system of RStudio and RMarkdown to make sure that our students can finish this course reading in an Excel spreadsheet, produce basic numerical and graphical summaries and write up a decent exploratory analysis report. We don't expect them to do too much complex maths and modelling until second year. 
+
+1. But once they know, many of them just takes off and do crazy things with their data that I couldn't even do until I was in Honours.
+
+---
+class: segue
+
+# Demo time
+
+---
+
+## Some tips for RStudio + RMarkdwon (1)
+
++ Use a R-Project to manage all files. We are aiming for one single R-Project for the entire course. All tutorials should be store here. Some additional folders could be introduced, e.g. a `data` folder.
+
++ Once the R-Project is opened, they should use a RMarkdown file (not R script). Every tutorial comes with one `.Rmd` file which the students will fill in. Some tutorials even has codes assuming a `data` folder has been created. 
+
++ The biggest fear of the students at this point is **chunks**. Try to reinforce this idea that anything in a chunk is R code, everything else is your personal comments on the R outputs (it will take them a long time to get it). 
+
+---
+
+## Some tips for tutorials
+
++ Slooooooooooow down for your students
+
++ dag
+
+---
+
+## Some tips for coding 
+
++ Please don't try to be (too) perfect. Showing your programming mistakes and correcting them send a positive signal to your students. Students are gentle creatures, they do not like the sight of error messages in sharp red text.
+
+.scroll-box-20[
+
+
+```r
+ggplot(iris) +
+  geom_point(aes(x = Sepal.Length, y = Sepal.Width))
+```
+
+```
+## Error in ggplot(iris): could not find function "ggplot"
+```
+
+
+```r
+library(ggplot2)
+ggplot(iris) +
+  geom_point(aes(x = Sepal.Length, y = Sepal.Width))
+```
+
+![](tutor_demo_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+
+]
+
++ Try to stick to tutorial codes and base R. Only resort to Tidyverse when the task becomes impossibly difficult in base R. 
+
+---
+
+## A pedantic example
+
++ Student: How can I do a *dot plot* or the *line plot* for the median of this data across some categories? 
+
+
+1.  Show me the data first please?
+1.  Why do you want to see the median?
+
+
+
+--
+
++ Student: So I can claim that there is an *increasing trend* across the categories. 
+
+1.  Why not just do a boxplot across the three categories?
+1.  Could you draw for me, by hand, what you think this boxplot would look like?
+
+---
+
+## Try to lead your students to a more comprehensive answer
+
++ In the `iris` dataset, the variable `Sepal.Length` is negatively correlated with `Sepal.Width`, it is therefore necessary that these two variablse must also be negatively correlated in any arbitarily chosen `Species`. 
+
+.scroll-box-20[
+
+
+```r
+table(iris$Species)
+```
+
+```
+## 
+##     setosa versicolor  virginica 
+##         50         50         50
+```
+
+```r
+cor(iris$Sepal.Length, iris$Sepal.Width)
+```
+
+```
+## [1] -0.1175698
+```
+
+
+
+
+```r
+par(mfrow = c(1, 2))
+boxplot(iris$Sepal.Length ~ iris$Species)
+boxplot(iris$Sepal.Width ~ iris$Species)
+```
+
+![](tutor_demo_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+
+```r
+par(mfrow = c(1, 1))
+```
+
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="assets/remark-zoom.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true,
+"ratio": "16:9",
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
