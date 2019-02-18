@@ -25,32 +25,81 @@
 class: center, middle, inverse, title-slide
 
 # 2019 Statistics Tutor R Demo
-### <a href="http://www.maths.usyd.edu.au/ut/people?who=KY_Wang&amp;sms=y">Kevin Y. X. Wang</a>
-### Initiated on 2019 Feb 17, compiled on 2019 Feb 17
+## <a href="https://kevinwang09.github.io/tutor_demo/" class="uri">https://kevinwang09.github.io/tutor_demo/</a>
+### <a href="https://kevinwang09.github.io/">Kevin Y. X. Wang</a>
+### Initiated on 2019 Feb 17, compiled on 2019 Feb 18
 
 ---
+
+
 
 class: segue
 
-### Disclaimer: these materials were written based on my teaching experiences. Your experiences may differ. If any symptons persist, consult your lecturer(s) or other senior tutor(s). 
+### Disclaimer: these materials were written based on my teaching experiences. 
+
+Your experiences may differ. 
+
+If symptons persist, consult your lecturers or other senior tutors. 
 
 ---
+
+class: segue-yellow
+
+2018 tutor training notes
+
+https://github.com/kevinwang09/tutor_demo/blob/master/2018_TutorTraining.pdf
+
+
+R Guide
+
+http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html
+
+---
+
+
+## Key changes
+
+We have looked at the changes in our environment and determined the topics and information that is important for a students. The construction of this new curriculum is a learning curves for ALL of us. 
+
+In particular we aim to:
+
++ incorporate statistical thinking and intuition;
+
++ develop statistical competence in handling real world data in the age of big data; 
+
++ give practical experience with the appropriate accompanying soft skills;
+
++ provide the foundation to link mathematical syntax with words.
+
+**What we didn't change:** The formal concept of probability and distribution theory has always been introduced in STAT2011/2911 (first semester of second year) and this continues to be the case. 
+
+---
+
+## Aim 
+
+1.  In all these courses, the students will learn how to solve problems with **real** data, using statistical thinking and computational skills.
+
+1.  They also develop essential soft skills of curiosity, collaboration and communication.
+
+---
+
 
 class: segue
 
-### These courses will be different to your 1st Year Statistics Class
+### These courses will be different to your 1st year statistics class
 
 ---
 
-## The courses seem 'softer'?
 
-For example: what is the definition of sample correlation coefficient between two observed variables `\(x\)` and `\(y\)`?
+## Kevin: why are these courses seem 'softer'?
+
+Example 1: what is the definition of sample correlation coefficient between two observed variables `\(x\)` and `\(y\)`?
 
 --
 
 + When I did 1st year statistics: 
 
-`$$r_{xy} =  \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}} = \frac{n \sum x_i y_i - \sum x_i \sum y_i }{\sqrt{n \sum x_i^2 - (\sum x_i)^2} \sqrt{n \sum y_i^2 - (\sum y_i)^2}}$$`
+`$$r_{xy} =  \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}} = \frac{n \sum x_i y_i - \sum x_i \sum y_i }{\sqrt{n \sum x_i^2 - (\sum x_i)^2} \sqrt{n \sum y_i^2 - (\sum y_i)^2}}.$$`
 
 --
 
@@ -58,9 +107,9 @@ For example: what is the definition of sample correlation coefficient between tw
 
 --
 
-+ Geometry: it is the cosine of the angle between the centered `\(x\)` and `\(y\)` in the `\(\mathbb{R}^n\)` space.
++ Geometry: it is the cosine of the angle between the centered vectors `\(x\)` and `\(y\)` in the `\(\mathbb{R}^n\)` space.
 
-&gt; Correlation is a **measure of similarity** between `\(x\)` and `\(y\)` to inform us something about the data, but students get tangled up in the calculations.
+&gt; Correlation is a **measure of similarity** between `\(x\)` and `\(y\)` to inform us something about the data. But the intuitive interpretation takes a bit more mathematical training. 
 
 ---
 
@@ -74,9 +123,9 @@ For example: what is the definition of sample correlation coefficient between tw
 
 &lt;!-- + We look at the *centre and spread* of each paired observation in `\(x\)` and `\(y\)` using z-scores. Then, we get a *joint summary* of the two z-scores using multiplication and averaging.  --&gt;
 
-+ Mean* of the product of the z-scores of `\(x\)` and `\(y\)`, 
++ Mean&lt;sup&gt;*&lt;/sup&gt; of the product of the z-scores of `\(x\)` and `\(y\)`
 
-`$$r_{xy}={\frac {1}{n-1}}\sum _{i=1}^{n}\left({\frac {x_{i}-{\bar {x}}}{s_{x}}}\right)\left({\frac {y_{i}-{\bar {y}}}{s_{y}}}\right)$$` 
+`$$r_{xy}={\frac {1}{n-1}}\sum _{i=1}^{n}\left({\frac {x_{i}-{\bar {x}}}{s_{x}}}\right)\left({\frac {y_{i}-{\bar {y}}}{s_{y}}}\right).$$` 
 
 + Every single word in this definition were introduced previously in the course, and some concepts were recycled for emphasis. 
 
@@ -84,71 +133,159 @@ For example: what is the definition of sample correlation coefficient between tw
 
 ## Format of tutorials 
 
-+ Old tutorials: Kevin walks into the room, explains the key calculation for the first 5-10 minutes. Students do some questions on pen and paper to make sure they will know how to do this in the assignment and the final exam. 
++ .blue[Old tutorials:] Kevin walks into the room, explains the key calculation for the first 5-10 minutes. Students do some questions on pen and paper to make sure they will know how to do this in the assignment and the final exam. 
 
-+ New tutorials: Students actually get a quiz for the first 10 minutes. The motivations in the lab is the data and the thinking questions in textbook. Students then complete the rest of the worksheet using R Markdown. 
++ .red[New tutorials:] Students actually get a quiz for the first 10 minutes. The motivations in the tutorial are the data and the thinking questions in textbook. Students then complete the rest of the worksheet using R Markdown. 
 
 &lt;center&gt;
-&lt;img src="figures/rmsError.png", width="30%"&gt;
+&lt;img src="figures/rmsError.png", width="60%"&gt;
 &lt;/center&gt;
 
-&gt; In some ways, we are asking more out of our students. Hence some strategic preparations are needed before every tutorial.
 
-Because whenever an unexpected question arises, you can't get out of it by shouting maths formulas.
+
+---
+
+## Tutorial preparation 
+
+&gt; In some ways, we are asking more out of our students. We need them to do the statistical thinking as well as the computations.  
+
++ Please read the teaching guide and the tutorial worksheet &amp; the data before the class. Solutions/code to the questions are available. Try to **discuss** the answers with the students, don't force feed them. 
+
+--
+
++ Whenever an unexpected question arises, you can't get out of it by declaring maths formulas.
+
+.pull-left[
+
+&lt;center&gt;
+.font90[.brand-blue[Having more children causes higher blood pressure]]
+&lt;img src="figures/histBloodPressure.png", width="80%"&gt;
+&lt;/center&gt;
+
+]
+
+--
+
+.pull-right[
+&lt;center&gt;
+&lt;img src="figures/melanomaSurvival.png", width="60%"&gt;
+&lt;/center&gt;
+
+]
 
 ---
 class: segue
-
-
 
 ### What was the hardest thing about using `R` in your undergraduate studies?
 
 ---
 
-## Some suggestions
+## Some selected questions throughout the semester
 
-+ Where are my **files and folders**?
-+ How do I read in this *Excel sheet*?
-+ How can I *clean* my data?
-+ How do I do this *graph*? How do I calculate this *number*?
-+ What is the *purpose* of this analysis again?
+1. Where are my **files and folders**?
+1. How do I read in this **Excel sheet**? How can I **clean** my data?
+1. How do I do this **graph**? How do I calculate this **number**?
 
-&gt; That inability to recognise where the Excel files are located in which folder will be the biggest obstacle for our student in the first 2 weeks &lt;sup&gt;1&lt;/sup&gt;. 
+&gt; But they rarely ask the question "What is the **purpose** of this graph/number?". 
 
-+ We are using a system of RStudio and RMarkdown to make sure that our students can finish this course reading in an Excel spreadsheet, produce basic numerical and graphical summaries and write up a decent exploratory analysis report. We don't expect them to do too much complex maths and modelling until second year. 
+--
 
-1. But once they know, many of them just takes off and do crazy things with their data that I couldn't even do until I was in Honours.
+By the end of this course, students should:
+
++ Use RStudio and RMarkdown.
++ Read in an Excel spreadsheet.
++ Produce basic numerical and graphical summaries.
++ Write up a basic exploratory analysis report that .brand-blue[addresses a research question]. 
 
 ---
 class: segue
 
-# Demo time
+# Demo for setting up the file system
 
 ---
 
-## Some tips for RStudio + RMarkdwon (1)
+## Some tips for RStudio + RMarkdown (Week 1 to 4)
 
-+ Use a R-Project to manage all files. We are aiming for one single R-Project for the entire course. All tutorials should be store here. Some additional folders could be introduced, e.g. a `data` folder.
++ http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html
 
-+ Once the R-Project is opened, they should use a RMarkdown file (not R script). Every tutorial comes with one `.Rmd` file which the students will fill in. Some tutorials even has codes assuming a `data` folder has been created. 
+&gt; That inability to recognise where the Excel files are located in which folder will be the biggest obstacle for our student in the first 2 weeks. 
 
-+ The biggest fear of the students at this point is **chunks**. Try to reinforce this idea that anything in a chunk is R code, everything else is your personal comments on the R outputs (it will take them a long time to get it). 
++ We are aiming for one single R-Project for the entire course. 
+
++ They should use a `.Rmd` file (not R script) for every tutorial. These questions ger progressively harder.
+
++ The biggest source of confusion is the **chunks**. Reinforce this idea that anything in a chunk is R code, everything else is your personal comments on the R outputs. 
+
++ Sloooooooooooooooooooowwwwwwww down for your students.
+
+---
+class: segue
+
+# Demo for reading and cleaning data
 
 ---
 
-## Some tips for tutorials
+## Some tips for coding (1)
 
-+ Slooooooooooow down for your students
++ `janitor::clean_names()` is perhaps the simplest function to reduce student frustrations when completing projects.
 
-+ dag
-
----
-
-## Some tips for coding 
-
-+ Please don't try to be (too) perfect. Showing your programming mistakes and correcting them send a positive signal to your students. Students are gentle creatures, they do not like the sight of error messages in sharp red text.
 
 .scroll-box-20[
+
+```r
+dirtyIris = readr::read_csv("data/dirtyIris.csv")
+```
+
+```
+## Parsed with column specification:
+## cols(
+##   Sepal....Length = col_double(),
+##   `Sepal.?    Width` = col_double(),
+##   `petal.Length(*&amp;^` = col_double(),
+##   `petal.$^&amp;Width` = col_double(),
+##   `SPECIES^` = col_character(),
+##   allEmpty = col_logical()
+## )
+```
+
+```r
+colnames(dirtyIris)
+```
+
+```
+## [1] "Sepal....Length"  "Sepal.?    Width" "petal.Length(*&amp;^"
+## [4] "petal.$^&amp;Width"   "SPECIES^"         "allEmpty"
+```
+
+```r
+janitor::clean_names(dirtyIris)
+```
+
+```
+## # A tibble: 650 x 6
+##    sepal_length sepal_width petal_length petal_width species    all_empty
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;      &lt;lgl&gt;    
+##  1       7.7          3.8          6.7         2.2   virginica  NA       
+##  2      -0.184       NA           NA           1.10  setosa     NA       
+##  3       7.2          3.6          6.1         2.5   virginica  NA       
+##  4       6.3          2.3          4.4         1.3   versicolor NA       
+##  5       5.6          2.9          3.6         1.3   versicolor NA       
+##  6      NA           -0.906        0.793      NA     setosa     NA       
+##  7       0.0187      -0.906        0.793      NA     virginica  NA       
+##  8       6.3          2.5          4.9         1.5   versicolor NA       
+##  9      NA           NA            1.69       NA     setosa     NA       
+## 10      -0.184       -1.46         1.69        0.320 virginica  NA       
+## # … with 640 more rows
+```
+]
+
+
+---
+
+## Some tips for coding (2)
+
++ Students are gentle creatures, they do not like the sight of error/warnings messages in sharp red text.
+
 
 
 ```r
@@ -156,9 +293,26 @@ ggplot(iris) +
   geom_point(aes(x = Sepal.Length, y = Sepal.Width))
 ```
 
-```
-## Error in ggplot(iris): could not find function "ggplot"
-```
+&lt;pre style="color: red;"&gt;&lt;code&gt;## Error in ggplot(iris): could not find function "ggplot"
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;center&gt;
+&lt;img src="figures/deer.jpg", width="40%"&gt;
+&lt;/center&gt;
+
+
+---
+
+## Don't try to be (too) perfect
+
++ Showing your programming mistakes and then correcting them send a positive signal to your students. 
+
++ Garth was particularly good at this. He would do live Google searches even though he probably knows the answer. 
+
+--
+
 
 
 ```r
@@ -167,38 +321,43 @@ ggplot(iris) +
   geom_point(aes(x = Sepal.Length, y = Sepal.Width))
 ```
 
-![](index_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
 
-]
+---
+## Some tips for coding (3)
 
-+ Try to stick to tutorial codes and base R. Only resort to Tidyverse when the task becomes impossibly difficult in base R. 
+Use `tidyverse` sparingly:
+
+&lt;center&gt;
+&lt;img src="figures/base_tidyverse.jpg", width="80%"&gt;
+&lt;/center&gt;
+
+
 
 ---
 
 ## A pedantic example
 
-+ Student: How can I do a *dot plot* or the *line plot* for the median of this data across some categories? 
++ Student: How can I do a **dot plot** or the **line plot** for the median of the `iris` data across the `species` categories? 
 
-
-1.  Show me the data first please?
-1.  Why do you want to see the median?
-
-
+1.  First, could you show me the data please?
+1.  .red[Why] do you want to see the median?
 
 --
 
-+ Student: So I can claim that there is an *increasing trend* across the categories. 
+&lt;br&gt;
+
++ Student: So I can say that there is an *increasing trend* across the three categories for my report.
 
 1.  Why not just do a boxplot across the three categories?
-1.  Could you draw for me, by hand, what you think this boxplot would look like?
+1.  Could you draw for me, .red[by hand], what you think this boxplot would look like?
 
 ---
 
-## Try to lead your students to a more comprehensive answer
+## True or false? 
 
 + In the `iris` dataset, the variable `Sepal.Length` is negatively correlated with `Sepal.Width`, it is therefore necessary that these two variablse must also be negatively correlated in any arbitarily chosen `Species`. 
 
-.scroll-box-20[
 
 
 ```r
@@ -219,7 +378,9 @@ cor(iris$Sepal.Length, iris$Sepal.Width)
 ## [1] -0.1175698
 ```
 
+---
 
+## Try to lead your students to a more comprehensive answer
 
 
 ```r
@@ -228,13 +389,32 @@ boxplot(iris$Sepal.Length ~ iris$Species)
 boxplot(iris$Sepal.Width ~ iris$Species)
 ```
 
-![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
 
-```r
-par(mfrow = c(1, 1))
-```
+---
+## Summary 
+.large[
 
++ There is a stronger emphasis on statistical thinking and computation.
+
++ You don't have to impress your students by showing you know more maths symbols. Impress them by showing more insights into understanding the concepts. 
+
+(Associate Professor David Easdown has a [paper](http://www.maths.usyd.edu.au/u/pubs/publist/preprints/2009/easdown-12.pdf) on syntactic and semantic reasoning in mathematical learning. It is a great read.)
+
++ The courses are different, so do necessary preparations before tutorial.
+
++ Be prepared for non-standard questions in their projects.
+
++ Approach your lecturers and other senior tutors for advice, we are all in this together.
 ]
+
+---
+## Reference
+
++ Freedman, David &amp; Pisani, Robert &amp; Purves, Roger. Statistics (4th ed). Norton, New York. 
+
++ Distinguishing Clinicopathologic Features of Patients with V600E and V600K BRAF-Mutant Metastatic Melanoma
+Alexander M. Menzies, Lauren E. Haydu, Lydia Visintin, Matteo S. Carlino, Julie R. Howle, John F. Thompson, Richard F. Kefford, Richard A. Scolyer and Georgina V. Long. Clin Cancer Res June 15 2012 (18) (12) 3242-3249; DOI: 10.1158/1078-0432.CCR-12-0052
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
