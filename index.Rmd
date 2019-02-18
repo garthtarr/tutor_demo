@@ -324,9 +324,9 @@ boxplot(iris$Sepal.Width ~ iris$Species)
 
 + There is a stronger emphasis on statistical thinking and computation.
 
-+ You don't have to impress your students by showing you know more maths symbols. Impress them by showing more insights into understanding the concepts. 
++ You don't have to impress your students by showing you know more maths symbols. 
 
-(Associate Professor David Easdown has a [paper](http://www.maths.usyd.edu.au/u/pubs/publist/preprints/2009/easdown-12.pdf) on syntactic and semantic reasoning in mathematical learning. It is a great read.)
++ Impress them by showing more insights of the concept. (Associate Professor David Easdown has a [paper](http://www.maths.usyd.edu.au/u/pubs/publist/preprints/2009/easdown-12.pdf) on syntactic and semantic reasoning in mathematical learning. It is a great read.)
 
 + The courses are different, so do necessary preparations before tutorial.
 
