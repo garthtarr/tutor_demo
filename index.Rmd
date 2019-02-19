@@ -106,7 +106,7 @@ $$r_{xy} =  \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x}
 
 --
 
-$$r_{xy}={\frac {1}{{\color{red} n}-1}}\sum _{i=1}^{n}\left( \color{blue} {\frac {x_{i}-{\bar {x}}}{s_{x}}} \right)  \left( \color{blue} {\frac {y_{i}-{\bar {y}}}{s_{y}}} \right).$$ 
+$$r_{xy}=\frac{1}{{\color{red} n}-1}\sum_{i=1}^{n} \left(\frac {x_{i} - {\bar {x}}}{s_{x}}\right) \left(\frac {y_{i} - {\bar {y}}}{s_{y}}\right).$$ 
 
 + .brand-blue[z-score] was already introduced in the course. The difference between .brand-red[population] and .brand-red[sample] is emphasised again. 
 
