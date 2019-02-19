@@ -148,7 +148,7 @@ $$r_{xy}=\frac{1}{n-1}\sum_{i=1}^{n} \left(\frac {x_{i} - {\bar {x}}}{s_{x}}\rig
 
 > You can't solve all questions by declaring maths formulas. 
 
-+ Please read the teaching guide and the tutorial worksheet & the data before the class.
++ Please read the [R Guide](http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html) and the tutorial worksheet & the data before the class.
 + **Discuss** the solutions (not the numerical answer) with the students, so they can see how you make **statistical arguments**. 
 
 .footnote[
@@ -203,7 +203,7 @@ By the end of this course, students should:
 ---
 class: segue
 
-# Core materials: demo for setting up the file system (Section 1.5 to 1.8 of RGuide)
+# Core materials: demo for setting up the file system (Section 1.5 to 1.8 of R Guide)
 
 ---
 
@@ -223,7 +223,7 @@ class: segue
 
 ## Some tips for RStudio + RMarkdown (2)
 
-+ The RGuide is the basic assessable material, so we need to be careful not to scare them with more complicated coding.
++ The R Guide is the basic assessable material, so we need to be careful not to scare them with more complicated coding.
 
 + However, for projects we encourage them to use stackoverflow etc to investigate new coding, as the need arises.
 
