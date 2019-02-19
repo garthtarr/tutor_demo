@@ -48,20 +48,17 @@ http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html
 
 ---
 
-## More semantic learning real applied skills
+## More semantic learning & real applied skills
 
 
-1.  In all these courses, the students will learn how to solve problems with **real** data, using statistical thinking and computational skills.
+1.  Students will learn how to solve problems with **real** data, with strong emphasis on statistical thinking and computational skills.
+1.  They will also develop essential soft skills of collaboration and communication.
 
 
-1.  They also develop essential soft skills of curiosity, collaboration and communication.
+> We want our students to learn the concepts of statistics (semantics) and the practice of data science. We do not want them to be drowned with formulas (syntax) they don't understand. 
 
 
-
-> We want our students to learn the concepts of statistics (semantics) and not be drowned with more formulas (syntax). 
-
-
-.footnote[Associate Professor David Easdown has a great [paper](http://www.maths.usyd.edu.au/u/pubs/publist/preprints/2009/easdown-12.pdf) on syntactic and semantic reasoning in mathematical learning. It took me a great deal of time to appreciate the embodied ideas.]
+.footnote[Associate Professor David Easdown has a great [paper](http://www.maths.usyd.edu.au/u/pubs/publist/preprints/2009/easdown-12.pdf) on syntactic and semantic reasoning in mathematical learning. It took me a great deal of time to appreciate the ideas.]
 ---
 
 
@@ -74,7 +71,7 @@ class: segue
 
 ## Kevin: why are these courses seem 'softer'?
 
-Example 1: what is the definition of sample correlation coefficient between two observed variables $x$ and $y$?
+Example 1: what is the definition of sample correlation coefficient between $x$ and $y$?
 
 --
 
@@ -84,19 +81,20 @@ $$r_{xy} =  \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x}
 
 --
 
-+ Linear algebra: it is the inner product between the centered vectors $x$ and $y$, divided by the products of their $L_2$ norms.
++ Linear algebra: it is the .brand-blue[inner product] between the .brand-blue[centered vectors] $x$ and $y$, divided by the products of their $L_2$ .brand-blue[norms].
 
 --
 
-+ Geometry: it is the cosine of the angle between the centered vectors $x$ and $y$ in the $\mathbb{R}^n$ space.
++ Geometry: it is the .brand-blue[cosine] of the angle between the .brand-blue[centered vectors] $x$ and $y$ in the $\mathbb{R}^n$ space.
 
-> Correlation is a **measure of similarity** between $x$ and $y$ to inform us something about the data. But the intuitive interpretation takes a bit more mathematical training. 
+> Correlation is a **measure of similarity** between $x$ and $y$ to inform us something about the data. But the intuitive geometric interpretation takes a bit more mathematical training. 
 
 ---
 
 ## More intuitions and more inter-linked contents
 
-+ How *tightly clustered* are $x$ and $y$ around the trend line? How to measure similarity $x$ and $y$ *using a number*? 
++ Visual: How **tightly clustered** are $x$ and $y$ around the trend line? 
++ Numerical: How to measure similarity $x$ and $y$ **using a number**? 
 
 <center>
 <img src="figures/two_scatter_plots.png", width="40%">
@@ -104,19 +102,23 @@ $$r_{xy} =  \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x}
 
 <!-- + We look at the *centre and spread* of each paired observation in $x$ and $y$ using z-scores. Then, we get a *joint summary* of the two z-scores using multiplication and averaging.  -->
 
-+ Mean<sup>*</sup> of the product of the z-scores of $x$ and $y$
++ .brand-red[Populations] correlation is the mean of the product of the .brand-blue[z-scores] of $x$ and $y$.
 
-$$r_{xy}={\frac {1}{n-1}}\sum _{i=1}^{n}\left({\frac {x_{i}-{\bar {x}}}{s_{x}}}\right)\left({\frac {y_{i}-{\bar {y}}}{s_{y}}}\right).$$ 
+--
 
-+ Every single word in this definition were introduced previously in the course, and some concepts were recycled for emphasis. 
+$$r_{xy}={\frac {1}{{\color{red} n}-1}}\sum _{i=1}^{n}\left( \color{blue} {\frac {x_{i}-{\bar {x}}}{s_{x}}} \right)  \left( \color{blue} {\frac {y_{i}-{\bar {y}}}{s_{y}}} \right).$$ 
+
++ .brand-blue[z-score] was already introduced in the course. The difference between .brand-red[population] and .brand-red[sample] is emphasised again. 
 
 ---
 
 ## Format of tutorials 
 
-+ .blue[Old tutorials:] Kevin walks into the room, explains the key calculation for the first 5-10 minutes. Students do some questions on pen and paper to make sure they will know how to do this in the assignment and the final exam. 
++ .brand-blue[Old tutorials:] Kevin walks into the room, explains the key calculation for the first 5-10 minutes. Students do some questions on pen and paper to make sure they will know how to do this in the assignment and the final exam. 
 
-+ .red[New tutorials:] Students actually get a quiz for the first 10 minutes. The motivations in the tutorial are the data and the thinking questions in textbook. Students then complete the rest of the worksheet using R Markdown. 
+--
+
++ .brand-red[New tutorials:] Students actually get a quiz for the first 10 minutes. The tutorial motivations are the data and the thinking questions in textbook. Students then complete the rest of the worksheet using R Markdown. 
 
 <center>
 <img src="figures/rmsError.png", width="60%">
@@ -128,13 +130,17 @@ $$r_{xy}={\frac {1}{n-1}}\sum _{i=1}^{n}\left({\frac {x_{i}-{\bar {x}}}{s_{x}}}\
 
 ## Tutorial preparation 
 
-> In some ways, we are asking more out of our students. We need them to do the statistical thinking as well as the computations.  
+> You can't solve all questions by declaring maths formulas. 
 
-+ Please read the teaching guide and the tutorial worksheet & the data before the class. Solutions/code to the questions are available. Try to **discuss** the answers with the students, don't force feed them. 
++ Please read the teaching guide and the tutorial worksheet & the data before the class.
++ **Discuss** the solutions (not the numerical answer) with the students, so they can see how you make **statistical arguments**. 
+
+.footnote[
+.font150[You have all demonstrated that you have the skills to make good statistical arguments in your interview. I believe you can do this all over again for students who are probably smarter than me. ]
+]
+
 
 --
-
-+ Whenever an unexpected question arises, you can't get out of it by declaring maths formulas.
 
 .pull-left[
 
@@ -153,6 +159,7 @@ $$r_{xy}={\frac {1}{n-1}}\sum _{i=1}^{n}\left({\frac {x_{i}-{\bar {x}}}{s_{x}}}\
 </center>
 
 ]
+
 
 ---
 class: segue
@@ -209,7 +216,7 @@ class: segue
 ## Some tips for coding (1)
 
 + `janitor::clean_names()` is perhaps the simplest function to reduce student frustrations when completing projects.
-
++ `readr::read_csv()` has some advantages over `utils::read.csv()`, especially with factors. 
 
 .scroll-box-20[
 ```{r}
@@ -238,17 +245,14 @@ ggplot(iris) +
 <img src="figures/deer.jpg", width="40%">
 </center>
 
-
 ---
-
 ## Don't try to be (too) perfect
 
 + Showing your programming mistakes and then correcting them send a positive signal to your students. 
 
-+ Garth was particularly good at this. He would do live Google searches even though he probably knows the answer. 
++ Garth was particularly good at this. He would do live Google searches and copy StackExchange codes even though he knew the answer. 
 
 --
-
 
 ```{r, fig.height=3.5, fig.width=6}
 library(ggplot2)
@@ -265,29 +269,72 @@ Use `tidyverse` sparingly:
 <img src="figures/base_tidyverse.jpg", width="80%">
 </center>
 
+.footnote[https://twitter.com/thinkR_fr/status/882604987381055489]
+---
+class: segue
 
+# Demo for subsetting data
+
+---
+## Students struggle with subsetting data (1)
+
+`R` is partially blamed for this. This [base R cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf) helps.
+.scroll-box-20[
+
+```{r}
+x = 1:5; names(x) = letters[1:5]
+x[c(2)] ## Index subsetting
+x[c(FALSE, TRUE, FALSE, FALSE, FALSE)] ## Logical subsetting
+x[c("b")] ## Names subsetting 
+x[-c(1, 3, 4, 5)] ## Eliminiation using negative indexing
+head(iris$Species) ## Unique only to data.frame column subsetting
+```
+]
+---
+
+## Students struggle with subsetting data (2)
+
+|                      | vector                                 | data.frame (row)                            | data.frame (column)                         |
+|:----------------------:|:----------------------------------------:|:---------------------------------------------:|:---------------------------------------------:|
+| Index                | `x[c(2)]`                                | `data[c(2), ]`                                | `data[, c(2)]`                                |
+| Names                | `x[c("b")]`                              | `data[c("b"), ]`                              | `data[, c("b")]`                              |
+| Logical              | `x[c(FALSE, TRUE, FALSE, FALSE, FALSE)]` | `data[c(FALSE, TRUE, FALSE, FALSE, FALSE), ]` | `data[, c(FALSE, TRUE, FALSE, FALSE, FALSE)]` |
+|                      |                                        |                                             |                                             |
+| Elimination of index | `x[-c(1, 3, 4, 5)]`                      | `data[-c(1, 3, 4, 5), ]`                      | `data[, -c(1, 3, 4, 5)]`                      |
+| $                    |               -                        |          -                                  | `data$b`                                      |
+
++ Logical vector must be the same length as the `vector`, or number of rows/columns as the `data.frame`.
++ `$` doesn't work if the column name contain spaces*, for example `data$Sepal Length`. 
++ It is hard, and I haven't worked out the best way to teach this. Sarah suggested [this](http://adv-r.had.co.nz/Subsetting.html).
+
+
+.footnote[.font150[
+*This is the reason I recommend `janitor::clean_names()`. ]
+]
 
 ---
 
 ## A pedantic example
 
-+ Student: How can I do a **dot plot** or the **line plot** for the median of the `iris` data across the `species` categories? 
+Student: How can I do a **dot plot** or the **line plot** for the median of the `iris` data across the `species` categories? 
 
 1.  First, could you show me the data please?
-1.  .red[Why] do you want to see the median?
+1.  .brand-red[Why] do you want to see the median?
+
+> Students do not know the how, then they don't know the why. 
 
 --
 
-<br>
-
-+ Student: So I can say that there is an *increasing trend* across the three categories for my report.
+Student: So I can say that there is an *increasing trend* across the three categories for my report.
 
 1.  Why not just do a boxplot across the three categories?
-1.  Could you draw for me, .red[by hand], what you think this boxplot would look like?
+1.  Could you draw for me, .brand-red[by hand], what you think this boxplot would look like?
+
+> Students never quite formulate the question correctly, ask leading questions can help. 
 
 ---
 
-## True or false? 
+## Another pedantic example
 
 + In the `iris` dataset, the variable `Sepal.Length` is negatively correlated with `Sepal.Width`, it is therefore necessary that these two variablse must also be negatively correlated in any arbitarily chosen `Species`. 
 
@@ -319,6 +366,8 @@ boxplot(iris$Sepal.Width ~ iris$Species)
 
 + The courses are different, so do necessary preparations before tutorial.
 
++ Use the R [cheatsheets](https://www.rstudio.com/resources/cheatsheets/).
+
 + Be prepared for non-standard questions in their projects.
 
 + Approach your lecturers and other senior tutors for advice, we are all in this together.
@@ -326,8 +375,8 @@ boxplot(iris$Sepal.Width ~ iris$Species)
 
 ---
 ## Reference
++ Easdown, D., 2009. Syntactic and semantic reasoning in mathematics teaching and learning. Int. J. Math. Educ. Sci. Technol. 40, 941–949. https://doi.org/10.1080/00207390903205488
 
 + Freedman, David & Pisani, Robert & Purves, Roger. Statistics (4th ed). Norton, New York. 
 
-+ Distinguishing Clinicopathologic Features of Patients with V600E and V600K BRAF-Mutant Metastatic Melanoma
-Alexander M. Menzies, Lauren E. Haydu, Lydia Visintin, Matteo S. Carlino, Julie R. Howle, John F. Thompson, Richard F. Kefford, Richard A. Scolyer and Georgina V. Long. Clin Cancer Res June 15 2012 (18) (12) 3242-3249; DOI: 10.1158/1078-0432.CCR-12-0052
++ Menzies, A.M., Haydu, L.E., Visintin, L., Carlino, M.S., Howle, J.R., Thompson, J.F., Kefford, R.F., Scolyer, R.A., Long, G. V., 2012. Distinguishing clinicopathologic features of patients with V600E and V600K BRAF-mutant metastatic melanoma. Clin. Cancer Res. 18, 3242–3249. https://doi.org/10.1158/1078-0432.CCR-12-0052
