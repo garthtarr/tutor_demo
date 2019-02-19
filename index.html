@@ -39,7 +39,7 @@ class: segue
 
 Your experiences may differ. 
 
-If symptons persist, consult your lecturers or other senior tutors. 
+If symptoms persist, consult your lecturers or other senior tutors. 
 
 ---
 
@@ -53,6 +53,22 @@ https://github.com/kevinwang09/tutor_demo/blob/master/2018_TutorTraining.pdf
 R Guide
 
 http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html
+
+---
+
+## Outline
+
++ Course changes
+
++ Tutorial format changes
+
++ Core material demo
+
++ Project coding demo
+
++ Additional coding demo (time permitting)
+
++ Two pedantic examples from my own tutorials
 
 ---
 
@@ -77,7 +93,7 @@ class: segue
 ---
 
 
-## Kevin: why are these courses seem 'softer'?
+## Kevin: why do these courses seem 'softer'?
 
 Example 1: what is the definition of sample correlation coefficient between `\(x\)` and `\(y\)`?
 
@@ -95,7 +111,7 @@ Example 1: what is the definition of sample correlation coefficient between `\(x
 
 + Geometry: it is the .brand-blue[cosine] of the angle between the .brand-blue[centered vectors] `\(x\)` and `\(y\)` in the `\(\mathbb{R}^n\)` space.
 
-&gt; Correlation is a **measure of similarity** between `\(x\)` and `\(y\)` to inform us something about the data. But the intuitive geometric interpretation takes a bit more mathematical training. 
+&gt; Correlation is a **measure of similarity** between `\(x\)` and `\(y\)` which informs us something about the data. But the intuitive geometric interpretation takes a bit more mathematical training. 
 
 ---
 
@@ -144,8 +160,7 @@ Example 1: what is the definition of sample correlation coefficient between `\(x
 + **Discuss** the solutions (not the numerical answer) with the students, so they can see how you make **statistical arguments**. 
 
 .footnote[
-.font150[You have all demonstrated that you have the skills to make good statistical arguments in your interview. I believe you can do this all over again for students who are probably smarter than me. ]
-]
+.font150[You have all demonstrated abilities in making good statistical arguments during your interview.]]
 
 
 --
@@ -178,14 +193,6 @@ class: segue
 
 ## Some selected questions throughout the semester
 
-1. Where are my **files and folders**?
-1. How do I read in this **Excel sheet**? How can I **clean** my data?
-1. How do I do this **graph**? How do I calculate this **number**?
-
-&gt; But they rarely ask the question "What is the **purpose** of this graph/number?". 
-
---
-
 By the end of this course, students should:
 
 + Use RStudio and RMarkdown.
@@ -193,31 +200,50 @@ By the end of this course, students should:
 + Produce basic numerical and graphical summaries.
 + Write up a basic exploratory analysis report that .brand-blue[addresses a research question]. 
 
+--
+
+1. Where are my **files and folders**?
+1. How do I read in this **Excel sheet**? How can I **clean** my data?
+1. How do I do this **graph**? How do I calculate this **number**?
+
+&gt; But they rarely ask the question "What is the **purpose** of this graph/number?". 
+
 ---
 class: segue
 
-# Demo for setting up the file system
+# Core materials: demo for setting up the file system (Section 1.5 to 1.8 of RGuide)
 
 ---
 
-## Some tips for RStudio + RMarkdown (Week 1 to 4)
+## Some tips for RStudio + RMarkdown (1)
 
-+ http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html
++ R Guide: http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html
 
-&gt; That inability to recognise where the Excel files are located in which folder will be the biggest obstacle for our student in the first 2 weeks. 
+&gt; That inability to recognise where the Rmd/Excell files are located in which folder will be the biggest obstacle for our student in the first 4 weeks. 
 
-+ We are aiming for one single R-Project for the entire course. 
++ We are aiming for one single folder for the entire course. Everyone should have the **same** folder structure. 
 
 + They should use a `.Rmd` file (not R script) for every tutorial. These questions ger progressively harder.
+
++ Setting up RStudio to have the `.html` file in RHS preview window (Section 1.7) is new for 2019.
+
+---
+
+## Some tips for RStudio + RMarkdown (2)
+
++ The RGuide is the basic assessable material, so we need to be careful not to scare them with more complicated coding.
+
++ However, for projects we encourage them to use stackoverflow etc to investigate new coding, as the need arises.
 
 + The biggest source of confusion is the **chunks**. Reinforce this idea that anything in a chunk is R code, everything else is your personal comments on the R outputs. 
 
 + Sloooooooooooooooooooowwwwwwww down for your students.
 
 ---
+
 class: segue
 
-# Demo for reading and cleaning data
+# Coding for projects: Demo for reading and cleaning data
 
 ---
 
@@ -283,7 +309,6 @@ janitor::clean_names(dirtyIris)
 + Students are gentle creatures, they do not like the sight of error/warnings messages in sharp red text.
 
 
-
 ```r
 ggplot(iris) +
   geom_point(aes(x = Sepal.Length, y = Sepal.Width))
@@ -292,8 +317,6 @@ ggplot(iris) +
 &lt;pre style="color: red;"&gt;&lt;code&gt;## Error in ggplot(iris): could not find function "ggplot"
 &lt;/code&gt;&lt;/pre&gt;
 
-
-
 &lt;center&gt;
 &lt;img src="figures/deer.jpg", width="40%"&gt;
 &lt;/center&gt;
@@ -301,7 +324,7 @@ ggplot(iris) +
 ---
 ## Don't try to be (too) perfect
 
-+ Showing your programming mistakes and then correcting them send a positive signal to your students. 
++ Showing your programming mistakes and then correcting them can send a positive signal to your students. 
 
 + Garth was particularly good at this. He would do live Google searches and copy StackExchange codes even though he knew the answer. 
 
@@ -319,7 +342,7 @@ ggplot(iris) +
 ---
 ## Some tips for coding (3)
 
-Use `tidyverse` sparingly:
+`tidyverse` is more suitable for student projects.
 
 &lt;center&gt;
 &lt;img src="figures/base_tidyverse.jpg", width="80%"&gt;
@@ -329,7 +352,7 @@ Use `tidyverse` sparingly:
 ---
 class: segue
 
-# Demo for subsetting data
+# Additional coding: Demo for subsetting data
 
 ---
 ## Students struggle with subsetting data (1)
@@ -430,7 +453,7 @@ Student: So I can say that there is an *increasing trend* across the three categ
 
 ## Another pedantic example
 
-+ In the `iris` dataset, the variable `Sepal.Length` is negatively correlated with `Sepal.Width`, it is therefore necessary that these two variablse must also be negatively correlated in any arbitarily chosen `Species`. 
+True or false? In the `iris` dataset, we know the variable `Sepal.Length` is negatively correlated with `Sepal.Width`. Therefore, it is necessary that these two variablse must also be negatively correlated in any arbitarily chosen `Species`. 
 
 
 
@@ -455,7 +478,7 @@ cor(iris$Sepal.Length, iris$Sepal.Width)
 ---
 
 ## Try to lead your students to a more comprehensive answer
-
+.pull-left[
 
 ```r
 par(mfrow = c(1, 2))
@@ -464,6 +487,20 @@ boxplot(iris$Sepal.Width ~ iris$Species)
 ```
 
 ![](index_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+
+```r
+ggplot(iris,
+       aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  facet_grid(~Species, margins = TRUE)
+```
+
+![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+]
 
 ---
 ## Summary 
@@ -471,11 +508,9 @@ boxplot(iris$Sepal.Width ~ iris$Species)
 
 + There is a stronger emphasis on statistical thinking and computation.
 
-+ You don't have to impress your students by showing you know more maths symbols. 
++ You don't have to impress your students by showing you know more maths symbols. Impress them by showing more insights of the concept. 
 
-+ Impress them by showing more insights of the concept. 
-
-+ The courses are different, so do necessary preparations before tutorial.
++ The courses are different, so do necessary preparations before tutorial. The [R Guide](http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html) is your friend. 
 
 + Use the R [cheatsheets](https://www.rstudio.com/resources/cheatsheets/).
 
