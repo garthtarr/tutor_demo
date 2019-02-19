@@ -101,7 +101,7 @@ $$r_{xy} =  \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x}
 
 --
 
-+ Geometry: it is the .brand-blue[cosine] of the angle between the .brand-blue[centered vectors] $x$ and $y$ in the $\mathbb{R}^n$ space.
++ Geometry: it is the .brand-blue[cosine of the angle] between the .brand-blue[centered vectors] $x$ and $y$.
 
 > Correlation is a **measure of similarity** between $x$ and $y$ which informs us something about the data. But the intuitive geometric interpretation takes a bit more mathematical training. 
 
