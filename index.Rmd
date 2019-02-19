@@ -170,7 +170,7 @@ $$r_{xy}=\frac{1}{n-1}\sum_{i=1}^{n} \left(\frac {x_{i} - {\bar {x}}}{s_{x}}\rig
 
 .pull-right[
 <center>
-<img src="figures/melanomaSurvival.png", width="60%">
+<img src="figures/melanomaSurvival2.png", width="60%">
 </center>
 
 ]
