@@ -182,9 +182,7 @@ class: segue
 
 ---
 
-## Some selected questions throughout the semester
-
-By the end of this course, students should:
+## By the end of this course, students should:
 
 + Use RStudio and RMarkdown.
 + Read in an Excel spreadsheet.
@@ -220,17 +218,24 @@ class: segue
 
 + Setting up RStudio to have the `.html` file in RHS preview window (Section 1.7) is new for 2019.
 
++ The biggest source of confusion is the **chunks**. Reinforce this idea that anything in a chunk is R code, everything else is your personal comments on the R outputs. 
+
++ Sloooooooooooooooooooowwwwwwww down for your students.
+
+
 ---
 
 ## Some tips for RStudio + RMarkdown (2)
 
-+ The R Guide is the basic assessable material, so we need to be careful not to scare them with more complicated coding.
++ The R Guide is the basic assessable material, there is no need to do complex coding in class.
 
-+ However, for projects we encourage them to use StackOverflow etc to investigate new coding, as the need arises.
++ But in projects, students are encouraged to explore new coding options, e.g. `tidyverse`.
 
-+ The biggest source of confusion is the **chunks**. Reinforce this idea that anything in a chunk is R code, everything else is your personal comments on the R outputs. 
+<center>
+<img src="figures/base_tidyverse.jpg", width="70%">
+</center>
 
-+ Sloooooooooooooooooooowwwwwwww down for your students.
+.footnote[https://twitter.com/thinkR_fr/status/882604987381055489]
 
 ---
 
@@ -240,10 +245,11 @@ class: segue
 
 ---
 
-## Some tips for coding (1)
+## Two simple functions
+
++ `readr::read_csv()` has some advantages over `utils::read.csv()`, especially with factors. 
 
 + `janitor::clean_names()` is perhaps the simplest function to reduce student frustrations when completing projects.
-+ `readr::read_csv()` has some advantages over `utils::read.csv()`, especially with factors. 
 
 .scroll-box-20[
 ```{r}
@@ -256,7 +262,7 @@ janitor::clean_names(dirtyIris)
 
 ---
 
-## Some tips for coding (2)
+## Don't try to be (too) perfect
 
 + Students are gentle creatures, they do not like the sight of error/warnings messages in sharp red text.
 
@@ -274,26 +280,14 @@ ggplot(iris) +
 
 + Showing your programming mistakes and then correcting them can send a positive signal to your students. 
 
-+ Garth was particularly good at this. He would do live Google searches and copy StackExchange codes even though he knew the answer. 
-
---
-
 ```{r, fig.height=3.5, fig.width=6}
 library(ggplot2)
 ggplot(iris) +
   geom_point(aes(x = Sepal.Length, y = Sepal.Width))
 ```
 
----
-## Some tips for coding (3)
+.footnote[Garth was particularly good at this. He would do live Google searches and copy StackExchange codes even though he knew the answer.]
 
-`tidyverse` is more suitable for student projects.
-
-<center>
-<img src="figures/base_tidyverse.jpg", width="80%">
-</center>
-
-.footnote[https://twitter.com/thinkR_fr/status/882604987381055489]
 ---
 class: segue
 
@@ -337,59 +331,87 @@ head(iris$Species) ## Unique only to data.frame column subsetting
 ]
 
 ---
+class: segue
 
-## A pedantic example
+# Two examples from my tutorial
+
+---
+
+## Example 1
+
+
+```{r, echo = FALSE}
+suppressPackageStartupMessages(library(dplyr))
+theme_set(
+  theme_bw(20)
+)
+```
 
 Student: How can I do a **dot plot** or the **line plot** for the median of the `iris` data across the `species` categories? 
 
-1.  First, could you show me the data please?
-1.  .brand-red[Why] do you want to see the median?
+--
 
-> Students do not know the how, then they don't know the why. 
+1.  First, could you show me the data please?
+2.  .brand-red[Why] do you want to see the median?
+
+--
+
+> First, students do not know the how. Then, they don't know the why. 
+
+--
+
+```{r}
+# library(dplyr)
+iris %>% 
+  group_by(Species) %>% 
+  summarise_all(median)
+```
+
 
 ---
 
-## A pedantic example
+## Example 1
 
 Student: So I can say that there is an *increasing trend* across the three categories for my report.
+--
 
 1.  Why not just do a boxplot across the three categories?
-1.  Could you draw for me, .brand-red[by hand], what you think this boxplot would look like?
+1.  Given the previous numbers, what you think this boxplot would look like (sketch .brand-red[by hand])?
 
 > Students never quite formulate the question correctly, ask leading questions can help. 
 
+```{r, echo = FALSE, fig.height=5, fig.width=16}
+par(mfrow = c(1, 2))
+boxplot(iris$Sepal.Length ~ iris$Species)
+boxplot(iris$Sepal.Width ~ iris$Species)
+```
+
+
 ---
 
-## Another pedantic example
+## Example 2
 
-True or false? In the `iris` dataset, we know the variable `Sepal.Length` is negatively correlated with `Sepal.Width`. Therefore, it is necessary that these two variables must also be negatively correlated in any arbitrarily chosen `Species`. 
+True or false? 
+
+In the `iris` dataset, we know the variable `Sepal.Length` is negatively correlated with `Sepal.Width`. Therefore, it is necessary that these two variables must also be negatively correlated in any arbitrarily chosen `Species`. 
 
 
 ```{r}
-table(iris$Species)
 cor(iris$Sepal.Length, iris$Sepal.Width)
 ```
 
 ---
 
-## Try to lead your students to a more comprehensive answer
-.pull-left[
-```{r, fig.height=5, fig.width=8}
-par(mfrow = c(1, 2))
-boxplot(iris$Sepal.Length ~ iris$Species)
-boxplot(iris$Sepal.Width ~ iris$Species)
-```
-]
+## Example 2
 
-.pull-right[
-```{r, fig.height=5, fig.width=8}
+```{r, fig.height=5, fig.width=16}
 ggplot(iris,
        aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point() +
   geom_smooth(method = "lm") +
   facet_grid(~Species, margins = TRUE)
 ```
-]
+
 
 ---
 ## Summary 

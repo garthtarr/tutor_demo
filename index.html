@@ -190,9 +190,7 @@ class: segue
 
 ---
 
-## Some selected questions throughout the semester
-
-By the end of this course, students should:
+## By the end of this course, students should:
 
 + Use RStudio and RMarkdown.
 + Read in an Excel spreadsheet.
@@ -228,17 +226,24 @@ class: segue
 
 + Setting up RStudio to have the `.html` file in RHS preview window (Section 1.7) is new for 2019.
 
++ The biggest source of confusion is the **chunks**. Reinforce this idea that anything in a chunk is R code, everything else is your personal comments on the R outputs. 
+
++ Sloooooooooooooooooooowwwwwwww down for your students.
+
+
 ---
 
 ## Some tips for RStudio + RMarkdown (2)
 
-+ The R Guide is the basic assessable material, so we need to be careful not to scare them with more complicated coding.
++ The R Guide is the basic assessable material, there is no need to do complex coding in class.
 
-+ However, for projects we encourage them to use StackOverflow etc to investigate new coding, as the need arises.
++ But in projects, students are encouraged to explore new coding options, e.g. `tidyverse`.
 
-+ The biggest source of confusion is the **chunks**. Reinforce this idea that anything in a chunk is R code, everything else is your personal comments on the R outputs. 
+&lt;center&gt;
+&lt;img src="figures/base_tidyverse.jpg", width="70%"&gt;
+&lt;/center&gt;
 
-+ Sloooooooooooooooooooowwwwwwww down for your students.
+.footnote[https://twitter.com/thinkR_fr/status/882604987381055489]
 
 ---
 
@@ -248,10 +253,11 @@ class: segue
 
 ---
 
-## Some tips for coding (1)
+## Two simple functions
+
++ `readr::read_csv()` has some advantages over `utils::read.csv()`, especially with factors. 
 
 + `janitor::clean_names()` is perhaps the simplest function to reduce student frustrations when completing projects.
-+ `readr::read_csv()` has some advantages over `utils::read.csv()`, especially with factors. 
 
 .scroll-box-20[
 
@@ -305,7 +311,7 @@ janitor::clean_names(dirtyIris)
 
 ---
 
-## Some tips for coding (2)
+## Don't try to be (too) perfect
 
 + Students are gentle creatures, they do not like the sight of error/warnings messages in sharp red text.
 
@@ -327,10 +333,6 @@ ggplot(iris) +
 
 + Showing your programming mistakes and then correcting them can send a positive signal to your students. 
 
-+ Garth was particularly good at this. He would do live Google searches and copy StackExchange codes even though he knew the answer. 
-
---
-
 
 ```r
 library(ggplot2)
@@ -340,16 +342,8 @@ ggplot(iris) +
 
 ![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
 
----
-## Some tips for coding (3)
+.footnote[Garth was particularly good at this. He would do live Google searches and copy StackExchange codes even though he knew the answer.]
 
-`tidyverse` is more suitable for student projects.
-
-&lt;center&gt;
-&lt;img src="figures/base_tidyverse.jpg", width="80%"&gt;
-&lt;/center&gt;
-
-.footnote[https://twitter.com/thinkR_fr/status/882604987381055489]
 ---
 class: segue
 
@@ -431,44 +425,72 @@ head(iris$Species) ## Unique only to data.frame column subsetting
 ]
 
 ---
+class: segue
 
-## A pedantic example
+# Two examples from my tutorial
+
+---
+
+## Example 1
+
+
+
 
 Student: How can I do a **dot plot** or the **line plot** for the median of the `iris` data across the `species` categories? 
 
+--
+
 1.  First, could you show me the data please?
-1.  .brand-red[Why] do you want to see the median?
+2.  .brand-red[Why] do you want to see the median?
 
-&gt; Students do not know the how, then they don't know the why. 
+--
 
----
+&gt; First, students do not know the how. Then, they don't know the why. 
 
-## A pedantic example
-
-Student: So I can say that there is an *increasing trend* across the three categories for my report.
-
-1.  Why not just do a boxplot across the three categories?
-1.  Could you draw for me, .brand-red[by hand], what you think this boxplot would look like?
-
-&gt; Students never quite formulate the question correctly, ask leading questions can help. 
-
----
-
-## Another pedantic example
-
-True or false? In the `iris` dataset, we know the variable `Sepal.Length` is negatively correlated with `Sepal.Width`. Therefore, it is necessary that these two variables must also be negatively correlated in any arbitrarily chosen `Species`. 
-
+--
 
 
 ```r
-table(iris$Species)
+# library(dplyr)
+iris %&gt;% 
+  group_by(Species) %&gt;% 
+  summarise_all(median)
 ```
 
 ```
-## 
-##     setosa versicolor  virginica 
-##         50         50         50
+## # A tibble: 3 x 5
+##   Species    Sepal.Length Sepal.Width Petal.Length Petal.Width
+##   &lt;fct&gt;             &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+## 1 setosa              5           3.4         1.5          0.2
+## 2 versicolor          5.9         2.8         4.35         1.3
+## 3 virginica           6.5         3           5.55         2
 ```
+
+
+---
+
+## Example 1
+
+Student: So I can say that there is an *increasing trend* across the three categories for my report.
+--
+
+1.  Why not just do a boxplot across the three categories?
+1.  Given the previous numbers, what you think this boxplot would look like (sketch .brand-red[by hand])?
+
+&gt; Students never quite formulate the question correctly, ask leading questions can help. 
+
+![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+
+---
+
+## Example 2
+
+True or false? 
+
+In the `iris` dataset, we know the variable `Sepal.Length` is negatively correlated with `Sepal.Width`. Therefore, it is necessary that these two variables must also be negatively correlated in any arbitrarily chosen `Species`. 
+
+
 
 ```r
 cor(iris$Sepal.Length, iris$Sepal.Width)
@@ -480,19 +502,8 @@ cor(iris$Sepal.Length, iris$Sepal.Width)
 
 ---
 
-## Try to lead your students to a more comprehensive answer
-.pull-left[
+## Example 2
 
-```r
-par(mfrow = c(1, 2))
-boxplot(iris$Sepal.Length ~ iris$Species)
-boxplot(iris$Sepal.Width ~ iris$Species)
-```
-
-![](index_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
-]
-
-.pull-right[
 
 ```r
 ggplot(iris,
@@ -502,8 +513,8 @@ ggplot(iris,
   facet_grid(~Species, margins = TRUE)
 ```
 
-![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
-]
+![](index_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+
 
 ---
 ## Summary 
