@@ -1,5 +1,5 @@
 ---
-title: "2019 Semester 2 Statistics Tutor R Demo"
+title: "2019 Semester 1  Statistics Tutor R Demo"
 subtitle: "https://kevinwang09.github.io/tutor_demo/"
 author: '[Kevin Y. X. Wang](https://kevinwang09.github.io/)'
 date: "`r paste0('Initiated on 2019 Feb 17, compiled on ', format(Sys.time(), '%Y %b %d'))`"
@@ -40,10 +40,6 @@ class: segue-yellow
 2018 tutor training notes
 
 https://github.com/kevinwang09/tutor_demo/blob/master/2018_TutorTraining.pdf
-
-2019 Semester 1 tutor training notes
-
-https://github.com/kevinwang09/tutor_demo/2019S1.html
 
 
 R Guide
