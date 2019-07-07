@@ -31,7 +31,7 @@ class: segue
 
 Your experiences may differ. 
 
-If symptoms persist, consult your lecturers or other senior tutors. 
+If "symptoms" persist, consult your lecturers or other senior tutors. 
 
 ---
 
@@ -93,6 +93,8 @@ class: segue
 
 Example 1: what is the definition of sample correlation coefficient between $x$ and $y$?
 
+Submit your answer at https://forms.gle/8fY9fk6RCgPBUhRM9. 
+
 --
 
 + When I did 1st year statistics: 
@@ -132,7 +134,7 @@ $$r_{xy}=\frac{1}{n-1}\sum_{i=1}^{n} \left(\frac {x_{i} - {\bar {x}}}{s_{x}}\rig
 
 ---
 
-## Format of tutorials 
+## Format of DATA1001 tutorials 
 
 + .brand-blue[Old tutorials:] Kevin walks into the room, explains the key calculation for the first 5-10 minutes. Students do some questions on pen and paper to make sure they will know how to do this in the assignment and the final exam. 
 
@@ -204,39 +206,67 @@ class: segue
 > But they rarely ask the question "What is the **purpose** of this graph/number?". 
 
 ---
+
 class: segue
 
-# Core materials: demo for setting up the file system (Section 1.5 to 1.8 of R Guide)
+# Demo 1: setting up a folder system: download files into a folder with subfolders, `setwd()`. 
+
+
+<center>
+<img src="figures/folderStr.jpeg", width="70%">
+</center>
 
 ---
 
-## Some tips for RStudio + RMarkdown (1)
+## What I suppose to teach you
 
-+ R Guide: http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html
++ [R Guide](http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html), section 1.5 to 1.8. We are aiming for **one single folder** for the entire course. 
+
++ Every week, students will download a `.Rmd` file and data files into the folder, and work on those questions. 
+
++ Everyone should have the same folder structure.
+
++ My experience tells me that no one ever does this. 
+
+  - They will create new folders every week
+  - Create subfolders within the main folder
+  - Mis-spell folder names
+  - Windows uses backward-slashes which doesn't help either. 
+
+---
+
+## An alternative using RStudio Project
+
+> The working directory of a `.Rmd` file is not the same as the working directory of the RStudio.
 
 > That inability to recognise where the Rmd/Excel files are located in which folder will be the biggest obstacle for our student in the first 4 weeks. 
 
-+ We are aiming for one single folder for the entire course. Everyone should have the **same** folder structure. 
 
-+ They should use a `.Rmd` file (not R script) for every tutorial. These questions get progressively harder.
+My solution to this is to go to RStudio - New Project: 
 
-+ Setting up RStudio to have the `.html` file in RHS preview window (Section 1.7) is new for 2019.
++ Click `New Directory` if they haven't set up a folder yet. 
++ Click `Existing Directory` if they already set up a folder. 
 
-+ The biggest source of confusion is the **chunks**. Reinforce this idea that anything in a chunk is R code, everything else is your personal comments on the R outputs. 
 
-+ Sloooooooooooooooooooowwwwwwww down for your students.
-
+(I am not suppose to teach you this as it is not on the R Guide, but if they follow this procedure correctly, they should never ask this question ever again.)
 
 ---
 
-## Some tips for RStudio + RMarkdown (2)
+
+## Some tips for RStudio + RMarkdown
+
++ The biggest source of confusion is the **chunks**. Reinforce this idea that anything in a chunk is R code, everything else are comments on the R outputs. 
+
++ Sloooooooooooooooooooowwwwwwww down for your students.
+
++ Use the `tab` key!! 
 
 + The R Guide is the basic assessable material, there is no need to do complex coding in class.
 
 + But in projects, students are encouraged to explore new coding options, e.g. `tidyverse`.
 
 <center>
-<img src="figures/base_tidyverse.jpg", width="70%">
+<img src="figures/base_tidyverse.jpg", width="40%">
 </center>
 
 .footnote[https://twitter.com/thinkR_fr/status/882604987381055489]
@@ -245,13 +275,13 @@ class: segue
 
 class: segue
 
-# Coding for projects: Demo for reading and cleaning data
+# Demo 2: reading and cleaning data
 
 ---
 
-## Two simple functions
+## Two simple functions 
 
-+ `readr::read_csv()` has some advantages over `utils::read.csv()`, especially with factors. 
++ `readr::read_csv()` has some advantages over `utils::read.csv()`, especially with factors. I strongly recommend against RStudio's point-and-click option. 
 
 + `janitor::clean_names()` is perhaps the simplest function to reduce student frustrations when completing projects.
 
@@ -266,9 +296,10 @@ janitor::clean_names(dirtyIris)
 
 ---
 
-## Don't try to be (too) perfect
+## Tips on reading and cleaning data
 
-+ Students are gentle creatures, they do not like the sight of error/warnings messages in sharp red text.
+
++ Don't try to be (too) perfect. Students are gentle creatures, they do not like the sight of error/warnings messages in sharp red text.
 
 ```{r,error=TRUE}
 ggplot(iris) +
@@ -280,7 +311,8 @@ ggplot(iris) +
 </center>
 
 ---
-## Don't try to be (too) perfect
+
+## Tips on reading and cleaning data
 
 + Showing your programming mistakes and then correcting them can send a positive signal to your students. 
 
@@ -295,7 +327,7 @@ ggplot(iris) +
 ---
 class: segue
 
-# Additional coding: Demo for subsetting data
+# Additional content for advanced R users
 
 ---
 ## Students struggle with subsetting data (1)
@@ -337,7 +369,7 @@ head(iris$Species) ## Unique only to data.frame column subsetting
 ---
 class: segue
 
-# Two examples from my tutorial
+# Demo: two real examples from my tutorial
 
 ---
 
@@ -351,18 +383,60 @@ theme_set(
 )
 ```
 
-Student: How can I do a **dot plot** or the **line plot** for the median of the `iris` data across the `species` categories? 
+Student asks: how can I do a **dot plot** or the **line plot** for the median of this data for the `species` categories? 
 
 --
 
-1.  First, could you show me the data please?
-2.  .brand-red[Why] do you want to see the median?
+1. The question is not well-formulated. Be patient with them. 
+
+2. Students always asks "how". Don't be trapped by that question. Ask them why they want to do such a plot?
 
 --
 
-> First, students do not know the how. Then, they don't know the why. 
+> First, could you show me the data please?
+
+The `iris` dataset. 
+
+-- 
+
+> .brand-red[Why] do you want to see the median?
 
 --
+
+So I can say that there is an *increasing trend* across the three categories for my report.
+
+---
+
+> This data has four continuous variables. When you say increasing trend, which one of the four are you referring to?
+
+Say, the `Sepal.Length`?
+
+--
+ 
+> So given one coninuous variable (`Sepal.Length`), and a discrete variable (`Species`), how would you draw a line plot or dot plot?
+
+I can't do a line plot. But maybe a dot plot like this? 
+
+```{r, fig.height=4, fig.width=16, echo = FALSE}
+plot(as.integer(iris$Species), iris$Sepal.Length)
+```
+---
+> Can you tell the trends is actually increasing from this "dot plot"? Especially considering there are ranges of points that overlaps?
+
+No, I probably can't. 
+
+> If you check you lecture notes, can you find out what is the recommended visualisation for cases where we have one coninuous variable and a discrete variable? And what the function?
+
+```{r, fig.height=4, fig.width=8}
+boxplot(iris$Sepal.Length ~ iris$Species)
+```
+
+--- 
+
+## Example 1 extended
+
+Most students will have trouble subsetting/summarising data. I strongly recommend the `dplyr` package for this: https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html. 
+
 
 ```{r}
 # library(dplyr)
@@ -371,42 +445,49 @@ iris %>%
   summarise_all(median)
 ```
 
-
 ---
 
-## Example 1
-
-Student: So I can say that there is an *increasing trend* across the three categories for my report.
---
-
-1.  Why not just do a boxplot across the three categories?
-1.  Given the previous numbers, what you think this boxplot would look like (sketch .brand-red[by hand])?
-
-> Students never quite formulate the question correctly, ask leading questions can help. 
-
-```{r, echo = FALSE, fig.height=5, fig.width=16}
-par(mfrow = c(1, 2))
-boxplot(iris$Sepal.Length ~ iris$Species)
-boxplot(iris$Sepal.Width ~ iris$Species)
-```
-
-
----
-
-## Example 2
+## Example 2: Simpson's paradox
 
 True or false? 
 
-In the `iris` dataset, we know the variable `Sepal.Length` is negatively correlated with `Sepal.Width`. Therefore, it is necessary that these two variables must also be negatively correlated in any arbitrarily chosen `Species`. 
-
+> In the `iris` dataset, we know the variable `Sepal.Length` is negatively correlated with `Sepal.Width`. Therefore, it is necessary that these two variables must also be negatively correlated in any arbitrarily chosen `Species`. 
 
 ```{r}
 cor(iris$Sepal.Length, iris$Sepal.Width)
 ```
 
+Yes, because the overall trend is an aggregation of the individual trends. And therefore each trends themselves must be negative. 
+
 ---
 
-## Example 2
+## Example 2: calculating the correlation
+
+> Why don't you try to find out by actually calculating the correlation values?
+
+
+```{r}
+cor(iris[iris$Species == "setosa",]$Sepal.Length, iris[iris$Species == "setosa",]$Sepal.Width)
+cor(iris[iris$Species == "versicolor",]$Sepal.Length, iris[iris$Species == "versicolor",]$Sepal.Width)
+cor(iris[iris$Species == "virginica",]$Sepal.Length, iris[iris$Species == "virginica",]$Sepal.Width)
+```
+
+---
+
+## Example 2: calculating the correlation
+
+> Good! Let me teach you a much easier way
+
+```{r}
+iris %>% 
+  group_by(Species) %>% 
+  summarise(cor = cor(Sepal.Length, Sepal.Width))
+```
+
+---
+
+
+## Example 2: plotting
 
 ```{r, fig.height=5, fig.width=16}
 ggplot(iris,
@@ -416,24 +497,32 @@ ggplot(iris,
   facet_grid(~Species, margins = TRUE)
 ```
 
-
 ---
-## Summary 
+## Summary on the course itself
 .large[
 
 + There is a stronger emphasis on statistical thinking and computation.
 
 + You don't have to impress your students by showing you know more maths symbols. Impress them by showing more insights of the concept. 
 
-+ The courses are different, so do necessary preparations before tutorial. The [R Guide](http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html) is your friend. 
++ Ask leading questions. Don't give out free answers. 
+
++ The courses are different, so do the necessary preparations before tutorial. The [R Guide](http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html) is your friend. 
+]
+
+---
+
+## Summary on the coding component
+.large[
++ There is an infinite number of functions/packages that I can go through with you, but given the time we have I can only recommend that you start with `readr::read_csv`, `janitor::clean_names`, `dplyr` and `ggplot2`. 
 
 + Use the R [cheatsheets](https://www.rstudio.com/resources/cheatsheets/).
 
 + Be prepared for non-standard questions in their projects.
 
 + Approach your lecturers and other senior tutors for advice, we are all in this together.
-]
 
+]
 ---
 ## Reference
 + Easdown, D., 2009. Syntactic and semantic reasoning in mathematics teaching and learning. Int. J. Math. Educ. Sci. Technol. 40, 941–949. https://doi.org/10.1080/00207390903205488
