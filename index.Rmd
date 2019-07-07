@@ -132,6 +132,8 @@ $$r_{xy}=\frac{1}{n-1}\sum_{i=1}^{n} \left(\frac {x_{i} - {\bar {x}}}{s_{x}}\rig
 
 ---
 
+
+
 ## Format of DATA1001 tutorials 
 
 + .brand-blue[Old tutorials:] Kevin walks into the room, explains the key calculation for the first 5-10 minutes. Students do some questions on pen and paper to make sure they will know how to do this in the assignment and the final exam. 
@@ -147,6 +149,7 @@ $$r_{xy}=\frac{1}{n-1}\sum_{i=1}^{n} \left(\frac {x_{i} - {\bar {x}}}{s_{x}}\rig
 
 
 ---
+
 
 ## Tutorial preparation 
 
@@ -178,6 +181,12 @@ $$r_{xy}=\frac{1}{n-1}\sum_{i=1}^{n} \left(\frac {x_{i} - {\bar {x}}}{s_{x}}\rig
 </center>
 ]
 
+
+---
+class: segue
+
+We aim to build statistical intuitions and applied skills in 1st year. 
+We will formalise concepts under a rigorous framework in 2nd year. 
 
 ---
 class: segue
