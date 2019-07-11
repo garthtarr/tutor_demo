@@ -323,6 +323,11 @@ ggplot(iris) +
 
 + Showing your programming mistakes and then correcting them can send a positive signal to your students. 
 
+```{r, include=FALSE}
+library(ggplot2)
+```
+
+
 ```{r, fig.height=3.5, fig.width=6}
 library(ggplot2)
 ggplot(iris) +

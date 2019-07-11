@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 # 2019 Semester 2 Statistics Tutor R Demo
 ## <a href="https://kevinwang09.github.io/tutor_demo/" class="uri">https://kevinwang09.github.io/tutor_demo/</a>
 ### <a href="https://kevinwang09.github.io/">Kevin Y. X. Wang</a>
-### Initiated on 2019 Feb 17, compiled on 2019 Jul 08
+### Initiated on 2019 Feb 17, compiled on 2019 Jul 12
 
 ---
 
@@ -377,24 +377,16 @@ ggplot(iris) +
 + Showing your programming mistakes and then correcting them can send a positive signal to your students. 
 
 
+
+
+
 ```r
 library(ggplot2)
-```
-
-```
-## Registered S3 methods overwritten by 'ggplot2':
-##   method         from 
-##   [.quosures     rlang
-##   c.quosures     rlang
-##   print.quosures rlang
-```
-
-```r
 ggplot(iris) +
   geom_point(aes(x = Sepal.Length, y = Sepal.Width))
 ```
 
-![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
 
 .footnote[Garth was particularly good at this. He would do live Google searches and copy StackExchange codes even though he knew the answer.]
 
@@ -524,7 +516,7 @@ Say, the `Sepal.Length`?
 
 I can't do a line plot. But maybe a dot plot like this? 
 
-![](index_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
 ---
 &gt; Can you tell the trends is actually increasing from this "dot plot"? Especially considering there are ranges of points that overlaps?
 
@@ -537,7 +529,7 @@ No, I probably can't.
 boxplot(iris$Sepal.Length ~ iris$Species)
 ```
 
-![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
 
 --- 
 
@@ -650,7 +642,7 @@ ggplot(iris,
   facet_grid(~Species, margins = TRUE)
 ```
 
-![](index_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
 
 ---
 ## Summary on the course itself
