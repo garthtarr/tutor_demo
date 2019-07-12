@@ -218,7 +218,9 @@ class: segue
 1. How do I read in this **Excel sheet**? How can I **clean** my data?
 1. How do I do this **graph**? How do I calculate this **number**?
 
-&gt; But they rarely ask the question "What is the **purpose** of this graph/number?". 
+&gt; Notice that the priority is often reversed. 
+
+&gt; Students rarely ask the question "What is the **purpose** of this graph/number".
 
 ---
 
@@ -496,7 +498,7 @@ Student asks: how can I do a **dot plot** or the **line plot** for the median of
 
 The `iris` dataset. 
 
--- 
+--
 
 &gt; .brand-red[Why] do you want to see the median?
 
@@ -508,7 +510,7 @@ So I can say that there is an *increasing trend* across the three categories for
 
 &gt; This data has four continuous variables. When you say increasing trend, which one of the four are you referring to?
 
-Say, the `Sepal.Length`?
+Ummmm.... the `Sepal.Length`?
 
 --
  
@@ -518,7 +520,7 @@ I can't do a line plot. But maybe a dot plot like this?
 
 ![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
 ---
-&gt; Can you tell the trends is actually increasing from this "dot plot"? Especially considering there are ranges of points that overlaps?
+&gt; Can you tell the trends is actually "increasing" from this "dot plot"? Especially considering there are ranges of points that overlaps?
 
 No, I probably can't. 
 
@@ -530,9 +532,7 @@ boxplot(iris$Sepal.Length ~ iris$Species)
 ```
 
 ![](index_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
-
---- 
-
+---
 ## Example 1 extended
 
 Most students will have trouble subsetting/summarising data. I strongly recommend the `dplyr` package for this: https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html. 
