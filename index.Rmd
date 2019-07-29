@@ -52,6 +52,14 @@ http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html
 
 ---
 
+class: segue-yellow
+
+# Submit your answer
+
+http://bit.ly/2019_tutor_training
+
+---
+
 ## Outline
 .large[
 + Course changes
@@ -72,8 +80,13 @@ http://www.maths.usyd.edu.au/u/UG/JM/DATA1001/r/current/guides/RGuide.html
 1.  Students will learn how to solve problems with **real** data, with strong emphasis on statistical thinking and computational skills.
 1.  They will also develop essential soft skills of collaboration and communication.
 
+> Formula and coding should only be there to reinforce the understanding of statistical concepts. 
 
-> We want our students to learn the concepts of statistics (semantics) and the practice of data science. We do not want them to be drowned by formulas (syntax) they don't understand. 
+ + We want our students to learn the concepts of statistics (semantics) and the practice of data science. 
+
+ + We do not want them to be drowned by formulas (syntax) they don't understand. 
+
+
 
 
 .footnote[Associate Professor David Easdown has a great [paper](http://www.maths.usyd.edu.au/u/pubs/publist/preprints/2009/easdown-12.pdf) on syntactic and semantic reasoning in mathematical learning. It took me a great deal of time to appreciate the ideas.]
@@ -91,7 +104,7 @@ class: segue
 
 Example 1: what is the definition of sample correlation coefficient between $x$ and $y$?
 
-Submit your answer at https://forms.gle/H9Ur2qfoF248Vi2d6.
+Submit your answer at http://bit.ly/2019_tutor_training.
 
 --
 
@@ -336,7 +349,7 @@ ggplot(iris) +
   geom_point(aes(x = Sepal.Length, y = Sepal.Width))
 ```
 
-.footnote[Garth was particularly good at this. He would do live Google searches and copy StackExchange codes even though he knew the answer.]
+.footnote[Garth would do live Google searches and copy StackExchange codes even though he knew the answer.]
 
 ---
 class: segue
@@ -409,6 +422,8 @@ Student asks: how can I do a **dot plot** or the **line plot** for the median of
 
 > First, could you show me the data please?
 
+--
+
 The `iris` dataset. 
 
 --
@@ -423,11 +438,15 @@ So I can say that there is an *increasing trend* across the three categories for
 
 > This data has four continuous variables. When you say increasing trend, which one of the four are you referring to?
 
+--
+
 Ummmm.... the `Sepal.Length`?
 
 --
  
 > So given one coninuous variable (`Sepal.Length`), and a discrete variable (`Species`), how would you draw a line plot or dot plot?
+
+--
 
 I can't do a line plot. But maybe a dot plot like this? 
 
@@ -437,9 +456,13 @@ plot(as.integer(iris$Species), iris$Sepal.Length)
 ---
 > Can you tell the trends is actually "increasing" from this "dot plot"? Especially considering there are ranges of points that overlaps?
 
+--
+
 No, I probably can't. 
 
 > If you check you lecture notes, can you find out what is the recommended visualisation for cases where we have one coninuous variable and a discrete variable? And what the function?
+
+--
 
 ```{r, fig.height=4, fig.width=8}
 boxplot(iris$Sepal.Length ~ iris$Species)
@@ -513,7 +536,7 @@ ggplot(iris,
 ## Summary on the course itself
 .large[
 
-+ There is a stronger emphasis on statistical thinking and computation.
++ There is a stronger emphasis on statistical thinking and coding. 
 
 + You don't have to impress your students by showing you know more maths symbols. Impress them by showing more insights of the concept. 
 
